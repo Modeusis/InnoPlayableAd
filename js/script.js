@@ -79,7 +79,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Phone simulator interaction
     const phoneFrame = document.querySelector('.phone-frame');
-    if (phoneFrame) {
+    
+    // ONLY add rotation click event if we are on a desktop (width > 768px)
+    if (phoneFrame && window.innerWidth > 768) {
         phoneFrame.addEventListener('click', function() {
             this.style.transform = this.style.transform === 'rotateY(0deg)' ? 'rotateY(-5deg)' : 'rotateY(0deg)';
         });

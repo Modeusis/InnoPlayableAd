@@ -1,0 +1,81 @@
+/* Responsive Design & Mobile Fullscreen Logic */
+@media (max-width: 768px) {
+    /* 1. Hide Landing Page Elements */
+    .header, 
+    .game-info, 
+    .footer, 
+    .phone-notch,
+    .phone-home-button {
+        display: none !important;
+    }
+
+    /* 2. Reset Body/Container to Full Viewport */
+    body, html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden; /* Prevent scrolling on mobile */
+        background: #000; /* Black background for game */
+    }
+
+    .container {
+        margin: 0;
+        padding: 0;
+        max-width: 100%;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* 3. Force Main Content to Full Screen */
+    .ad-page .main-content {
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        gap: 0;
+    }
+
+    /* 4. Remove Phone Simulator Styling (Borders, Perspective, Rotate) */
+    .phone-simulator {
+        perspective: none;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        display: block;
+    }
+
+    .phone-frame {
+        width: 100% !important;
+        height: 100% !important;
+        transform: none !important; /* Disable 3D rotation */
+        background: none;
+        border: none;
+        border-radius: 0;
+        padding: 0;
+        box-shadow: none;
+        position: fixed; /* Lock to screen */
+        top: 0;
+        left: 0;
+        z-index: 9999;
+    }
+
+    .phone-frame:hover {
+        transform: none; /* Disable hover effect */
+    }
+
+    .phone-screen {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        background: #000;
+    }
+
+    /* 5. Ensure Unity/Game Frame is Full Size */
+    .unity-frame {
+        width: 100vw;
+        height: 100vh;
+        display: block;
+    }
+}

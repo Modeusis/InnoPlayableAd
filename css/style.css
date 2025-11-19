@@ -348,7 +348,6 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Character Section */
 .character-section {
     margin-bottom: 40px;
 }
@@ -413,30 +412,4 @@ body {
     padding: 20px;
     border-top: 1px solid rgba(212, 175, 55, 0.3);
     color: #ccc;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .ad-page .main-content {
-        grid-template-columns: 1fr;
-    }
-    
-    .story-content {
-        grid-template-columns: 1fr;
-    }
-    
-    .download-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .title {
-        font-size: 2em;
-    }
-    
-    .phone-frame {
-        transform: none;
-        width: 280px;
-        height: 560px;
-    }
 }
