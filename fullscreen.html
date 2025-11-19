@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medieval Rescue - Game Information</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="mobile-fullscreen-game" id="mobileFullscreenGame">
+        <button class="leave-game-btn" id="leaveGameBtn">Leave Game</button>
+        <iframe 
+            src="./playable/playable.html" 
+            class="mobile-game-frame"
+            title="Medieval Rescue Game"
+            allow="autoplay; fullscreen">
+        </iframe>
+    </div>
+</body>
+<script>    
+    document.addEventListener('DOMContentLoaded', () => {
+        let leaveBut = document.getElementById('leaveGameBtn');
+
+        leaveBut.addEventListener('click', function () {
+            window.location.href = "./index.html";
+        });
+    })
+</script>
+</html>

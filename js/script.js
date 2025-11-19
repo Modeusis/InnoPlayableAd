@@ -12,6 +12,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (overlay) {
         overlay.addEventListener('click', function(e) {
+            
+            if (window.innerWidth < 768) {
+                window.location.href='./fullscreen.html';
+
+                return;
+            }
+
             e.stopPropagation(); 
             this.classList.add('is-playing');
         });
