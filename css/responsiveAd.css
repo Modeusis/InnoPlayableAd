@@ -75,7 +75,7 @@
     /* 5. Ensure Unity/Game Frame is Full Size */
     .unity-frame {
         width: 100vw;
-        height: 100vh;
+        height: 100dvh;
         display: block;
     }
 }
