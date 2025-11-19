@@ -114,6 +114,52 @@ body {
     background: #1a1a2e;
 }
 
+/* Ensure the parent is relative so absolute positioning works */
+.phone-screen {
+    position: relative; 
+    /* maintain your existing styles for phone-screen here */
+}
+
+.game-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+    z-index: 10; /* Sits on top of iframe */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+/* Style the button/text inside */
+.overlay-content {
+    text-align: center;
+    color: white;
+    font-family: 'MedievalSharp', cursive;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px 25px;
+    border-radius: 8px;
+    border: 2px solid #d4af37; /* Gold border */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.overlay-content .icon {
+    font-size: 2rem;
+}
+
+/* STATE: When the game is active */
+.game-overlay.is-playing {
+    opacity: 0; /* Make it invisible */
+    pointer-events: none;
+}
+
 .demo-overlay {
     position: absolute;
     top: 0;
@@ -438,5 +484,6 @@ body {
         transform: none;
         width: 280px;
         height: 560px;
+        min-height: 80dvh;
     }
 }

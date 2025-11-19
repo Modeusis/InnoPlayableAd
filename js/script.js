@@ -7,6 +7,24 @@ document.addEventListener('DOMContentLoaded', function() {
         feature.classList.add('float-animation');
     });
 
+    const overlay = document.getElementById('gameOverlay');
+    const phoneContainer = document.querySelector('.phone-simulator');
+
+    if (overlay) {
+        overlay.addEventListener('click', function(e) {
+            e.stopPropagation(); 
+            this.classList.add('is-playing');
+        });
+
+        document.addEventListener('click', function(e) {
+            if (overlay.classList.contains('is-playing')) {
+                if (phoneContainer && !phoneContainer.contains(e.target)) {
+                    overlay.classList.remove('is-playing');
+                }
+            }
+        });
+    }
+
     // Add click effects to buttons
     const buttons = document.querySelectorAll('.cta-button, .download-btn');
     buttons.forEach(button => {
