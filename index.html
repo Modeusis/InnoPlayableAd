@@ -1,73 +1,175 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medieval Rescue - Mobile Adventure</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body class="ad-page">
-    <div class="container">
-        <header class="header">
-            <h1 class="title">⚔️ Medieval Rescue ⚔️</h1>
-            <p class="subtitle">An Epic Quest to Save the Royal Heir</p>
-        </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Playable Ads Demo Hub</title>
+        <link rel="stylesheet" href="css/hub.css" />
+    </head>
+    <body class="hub-page">
+        <div class="bg-glow"></div>
 
-        <main class="main-content">
-            <div class="phone-simulator">
-                <div class="phone-frame">
-                    <div class="phone-notch"></div>
-                    <div class="phone-screen">
-                        <iframe 
-                            src="./playable/playable.html" 
-                            class="unity-frame"
-                            title="Medieval Rescue Game"
-                            allow="autoplay; fullscreen">
-                        </iframe>
+        <div class="site-wrapper">
+            <header class="header">
+                <div class="header-content">
+                    <div class="header-text">
+                        <h1 class="title">Playable ads hub</h1>
+                        <p class="subtitle">
+                            Compact portfolio for innowise unity department
+                            internal playable ads demos
+                        </p>
+                    </div>
+                    <button
+                        id="theme-toggle"
+                        class="theme-btn"
+                        aria-label="Toggle theme"
+                    >
+                        <span class="theme-icon sun">☀</span>
+                        <span class="theme-icon moon">☾</span>
+                    </button>
+                </div>
+            </header>
 
-                        <div class="game-overlay" id="gameOverlay">
-                            <div class="overlay-content">
-                                <span class="icon">⚔️</span>
-                                <span class="text">Tap to Start Game</span>
+            <main class="hub-main">
+                <section class="hub-list" aria-label="Playable concepts">
+                    <div class="hub-item" data-game="medieval">
+                        <div class="hub-item-header">
+                            <div class="hub-item-info">
+                                <span class="hub-item-title"
+                                    >Medieval Rescue</span
+                                >
+                                <span class="hub-item-meta"
+                                    >2D · Adventure · Decision</span
+                                >
                             </div>
+                            <span class="hub-item-arrow">➝</span>
+                        </div>
+
+                        <div class="hub-item-mobile-content">
+                            <img
+                                src="img/medieval-demo.png"
+                                alt="Medieval Rescue Art"
+                                class="mobile-img-actual"
+                            />
+                            <p class="mobile-desc">
+                                Quick emotional rescue scene. One clear
+                                conflict, one decision.
+                            </p>
+                            <button
+                                class="play-btn"
+                                onclick="location.href = './medieval-ad.html'"
+                            >
+                                Play Demo
+                            </button>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="game-info">
-                <h2>Embark on a Heroic Journey</h2>
-                <div class="features">
-                    <div class="feature">
-                        <span class="icon">🏰</span>
-                        <h3>Medieval World</h3>
-                        <p>Explore ancient castles and mysterious forests</p>
+                    <div class="hub-item" data-game="scifi">
+                        <div class="hub-item-header">
+                            <div class="hub-item-info">
+                                <span class="hub-item-title">Star Bastion</span>
+                                <span class="hub-item-meta"
+                                    >3D · Shooter · Tower Defense</span
+                                >
+                            </div>
+                            <span class="hub-item-arrow">➝</span>
+                        </div>
+
+                        <div class="hub-item-mobile-content">
+                            <img
+                                src="img/sci-fi-demo.png"
+                                alt="Star Bastion Art"
+                                class="mobile-img-actual"
+                            />
+                            <p class="mobile-desc">
+                                Hybrid 3D shooter. Defend the orbit, survive the
+                                wave.
+                            </p>
+                            <button
+                                class="play-btn"
+                                onclick="location.href = './scifi-ad.html'"
+                            >
+                                Play Demo
+                            </button>
+                        </div>
                     </div>
-                    <div class="feature">
-                        <span class="icon">👶</span>
-                        <h3>Save the Baby</h3>
-                        <p>Rescue the royal heir from dark forces</p>
+                </section>
+
+                <aside class="hub-preview-panel" aria-live="polite">
+                    <div class="hub-about-static">
+                        <h2 class="panel-label">About this hub</h2>
+                        <p class="panel-text">
+                            A brief description of the project you selected is
+                            below. Click "Launch Game" to try it yourself.
+                        </p>
                     </div>
-                    <div class="feature">
-                        <span class="icon">⚔️</span>
-                        <h3>Epic Battles</h3>
-                        <p>Fight monsters and overcome challenges</p>
+
+                    <div class="preview-content" id="preview-container">
+                        <div class="preview-placeholder">
+                            Select a project to preview
+                        </div>
+
+                        <div class="project-details" data-target="medieval">
+                            <img
+                                src="img/medieval-demo.png"
+                                alt="Medieval Rescue Art"
+                                class="desktop-img-actual"
+                            />
+                            <h2 class="detail-title">Medieval Rescue</h2>
+                            <p class="detail-desc">
+                                Short vertical adventure. The player drops into
+                                a rescue moment and understands the "one scene —
+                                one decision" structure immediately.
+                            </p>
+                            <div class="detail-tags">
+                                <span>2D</span>
+                                <span>Select to CTA</span>
+                                <span>Adaptive design</span>
+                            </div>
+                            <button
+                                class="play-btn-lg"
+                                onclick="location.href = './medieval-ad.html'"
+                            >
+                                Launch Project
+                            </button>
+                        </div>
+
+                        <div class="project-details" data-target="scifi">
+                            <img
+                                src="img/sci-fi-demo.png"
+                                alt="Star Bastion Art"
+                                class="desktop-img-actual"
+                            />
+                            <h2 class="detail-title">
+                                Star Bastion: Last Orbit
+                            </h2>
+                            <p class="detail-desc">
+                                A 3D sci-fi hybrid. Shoot enemies while
+                                controlling your view. A strong CTA follows the
+                                first enemy wave.
+                            </p>
+                            <div class="detail-tags">
+                                <span>3D</span>
+                                <span>Two finger control</span>
+                                <span>Reach score to CTA</span>
+                                <span>Adaptive design</span>
+                            </div>
+                            <button
+                                class="play-btn-lg"
+                                onclick="location.href = './scifi-ad.html'"
+                            >
+                                Launch Project
+                            </button>
+                        </div>
                     </div>
-                </div>
+                </aside>
+            </main>
 
-                <div class="cta-section">
-                    <a href="./game.html" class="cta-button">Learn More About the Game</a>
-                    <p class="cta-subtext">Join thousands of players in this epic adventure!</p>
-                </div>
-            </div>
-        </main>
+            <footer class="footer">
+                <p>&copy; 2026 Playable Demo Hub — Internal Showcase</p>
+            </footer>
+        </div>
 
-        <footer class="footer">
-            <p>&copy; 2024 Medieval Games Studio. All rights reserved.</p>
-        </footer>
-    </div>
-
-    <script src="js/script.js"></script>
-</body>
+        <script src="js/hub.js"></script>
+    </body>
 </html>

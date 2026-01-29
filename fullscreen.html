@@ -1,30 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medieval Rescue - Game Information</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="mobile-fullscreen-game" id="mobileFullscreenGame">
-        <button class="leave-game-btn" id="leaveGameBtn">Leave Game</button>
-        <iframe 
-            src="./playable/playable.html" 
-            class="mobile-game-frame"
-            title="Medieval Rescue Game"
-            allow="autoplay; fullscreen">
-        </iframe>
-    </div>
-</body>
-<script>    
-    document.addEventListener('DOMContentLoaded', () => {
-        let leaveBut = document.getElementById('leaveGameBtn');
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Medieval Rescue - Fullscreen Demo</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <div class="mobile-fullscreen-game" id="mobileFullscreenGame">
+            <iframe
+                src="./playable/playable.html"
+                class="mobile-game-frame"
+                title="Medieval Rescue Game"
+                allow="autoplay; fullscreen"
+            >
+            </iframe>
+        </div>
 
-        leaveBut.addEventListener('click', function () {
-            window.location.href = "./index.html";
-        });
-    })
-</script>
+        <button class="leave-game-btn" id="leaveGameBtn">
+            &nLeftarrow; Back
+        </button>
+
+        <!--<nav class="breadcrumb fullscreen-breadcrumb">
+            <a href="./index.html">Home</a>
+            <span class="breadcrumb-separator">›</span>
+            <a href="./medieval-ad.html">Ad</a>
+            <span class="breadcrumb-separator">›</span>
+            <span>Demo</span>
+        </nav>-->
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                let leaveBut = document.getElementById("leaveGameBtn");
+
+                leaveBut.addEventListener("click", function () {
+                    window.location.href = "./medieval-ad.html";
+                });
+            });
+        </script>
+    </body>
 </html>

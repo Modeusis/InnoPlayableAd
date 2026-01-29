@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Star Bastion - Tactical Mode</title>
+        <link rel="stylesheet" href="css/scifi-style.css" />
+    </head>
+    <body>
+        <div class="mobile-fs-container">
+            <!--<nav class="breadcrumb fullscreen-breadcrumb">
+                <a href="./index.html">HUB</a> /
+                <a href="./scifi-ad.html">UPLINK</a> /
+                <span>TACTICAL</span>
+            </nav>-->
+
+            <button id="abortMissionBtn" class="cyber-btn danger abort-btn">
+                [ X ] ABORT SIMULATION
+            </button>
+
+            <iframe
+                src="./playable/playable-scifi.html"
+                class="game-iframe"
+                title="Star Bastion Mobile"
+                allow="autoplay; fullscreen"
+            >
+            </iframe>
+        </div>
+
+        <script>
+            // Inline script for immediate execution on mobile
+            document.addEventListener("DOMContentLoaded", () => {
+                const abortBtn = document.getElementById("abortMissionBtn");
+                abortBtn.addEventListener("click", () => {
+                    // Return to the ad landing page
+                    window.location.href = "./scifi-ad.html";
+                });
+            });
+        </script>
+    </body>
+</html>
