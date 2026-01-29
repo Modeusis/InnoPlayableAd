@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Star Bastion - Database</title>
+        <link rel="stylesheet" href="css/scifi-style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+                <nav class="breadcrumb">
+                    <a href="./index.html">Hub</a> /
+                    <a href="./scifi-ad.html">Ad Simulation</a> /
+                    <span>Core Database</span>
+                </nav>
+                <h1 class="glitch-text">OPERATIONAL STATUS</h1>
+            </header>
+
+            <main>
+                <section class="holo-card">
+                    <h2 style="color: var(--neon-blue); margin-bottom: 20px">
+                        INCOMING TRANSMISSION
+                    </h2>
+                    <div style="display: flex; gap: 30px; flex-wrap: wrap">
+                        <div style="flex: 2">
+                            <p style="margin-bottom: 15px; line-height: 1.6">
+                                <span style="color: var(--neon-pink)"
+                                    >ALERT:</span
+                                >
+                                The Vexor Dominion has breached the outer rim.
+                                Star Bastion Alpha is the last line of defense
+                                for the human colonies.
+                            </p>
+                            <p style="margin-bottom: 15px; line-height: 1.6">
+                                As the AI Commander, you must allocate
+                                resources, build automated defenses, and pilot
+                                the experimental MK-IV interceptor. The fleet is
+                                endless, but our will is iron.
+                            </p>
+                        </div>
+
+                        <div
+                            style="
+                                flex: 1;
+                                min-width: 250px;
+                                display: flex;
+                                justify-content: center;
+                            "
+                        >
+                            <div
+                                style="
+                                    width: 200px;
+                                    height: 200px;
+                                    border: 2px solid var(--neon-blue);
+                                    border-radius: 50%;
+                                    background: radial-gradient(
+                                        circle,
+                                        rgba(0, 243, 255, 0.1) 0%,
+                                        transparent 70%
+                                    );
+                                    position: relative;
+                                    box-shadow: 0 0 15px var(--neon-blue);
+                                "
+                            >
+                                <div
+                                    style="
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 50%;
+                                        width: 100px;
+                                        height: 2px;
+                                        background: rgba(0, 255, 0, 0.5);
+                                        transform-origin: left;
+                                        animation: radar-spin 4s infinite linear;
+                                    "
+                                ></div>
+                            </div>
+                            <style>
+                                @keyframes radar-spin {
+                                    100% {
+                                        transform: rotate(360deg);
+                                    }
+                                }
+                            </style>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="holo-card">
+                    <h2 style="color: #fff; margin-bottom: 20px">
+                        UNIT SPECIFICATIONS
+                    </h2>
+                    <div class="stats-grid">
+                        <div style="border: 1px solid #333; padding: 15px">
+                            <h3
+                                style="
+                                    color: var(--neon-blue);
+                                    font-size: 0.9rem;
+                                "
+                            >
+                                MK-IV TURRET
+                            </h3>
+                            <p style="font-size: 2rem; font-weight: bold">
+                                500 <span style="font-size: 0.8rem">DPS</span>
+                            </p>
+                        </div>
+                        <div style="border: 1px solid #333; padding: 15px">
+                            <h3
+                                style="
+                                    color: var(--neon-pink);
+                                    font-size: 0.9rem;
+                                "
+                            >
+                                ENEMY WAVES
+                            </h3>
+                            <p style="font-size: 2rem; font-weight: bold">
+                                Infinite
+                            </p>
+                        </div>
+                        <div style="border: 1px solid #333; padding: 15px">
+                            <h3 style="color: #fff; font-size: 0.9rem">
+                                DOWNLOAD SIZE
+                            </h3>
+                            <p style="font-size: 2rem; font-weight: bold">
+                                45 <span style="font-size: 0.8rem">MB</span>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <div style="text-align: center; margin: 60px 0">
+                    <h2 style="margin-bottom: 20px">JOIN THE RESISTANCE</h2>
+                    <div
+                        style="
+                            display: flex;
+                            gap: 20px;
+                            justify-content: center;
+                            flex-wrap: wrap;
+                        "
+                    >
+                        <button class="cyber-btn">Download [iOS]</button>
+                        <button class="cyber-btn">Download [Android]</button>
+                    </div>
+                </div>
+            </main>
+
+            <footer class="footer">
+                <p>End of Line.</p>
+            </footer>
+        </div>
+
+        <script src="js/scifi-script.js"></script>
+    </body>
+</html>

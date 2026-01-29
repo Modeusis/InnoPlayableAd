@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Star Bastion - Neural Link</title>
+        <link rel="stylesheet" href="css/scifi-style.css" />
+    </head>
+    <body class="scifi-body">
+        <div class="container">
+            <header class="header">
+                <nav class="breadcrumb">
+                    <a href="./index.html">Hub</a> /
+                    <span>Neural Uplink</span>
+                </nav>
+                <h1 class="glitch-text" data-text="STAR BASTION">
+                    STAR BASTION
+                </h1>
+                <p style="color: var(--neon-blue); letter-spacing: 1px">
+                    DEFENSE PROTOCOL: INITIATED
+                </p>
+            </header>
+
+            <main class="main-grid">
+                <div class="phone-simulator">
+                    <div class="device-frame">
+                        <div class="scanline"></div>
+                        <div class="iframe-container">
+                            <div class="device-overlay" id="gameOverlay">
+                                <div class="start-btn">
+                                    <div class="start-icon"></div>
+                                </div>
+                                <p
+                                    style="
+                                        margin-top: 20px;
+                                        color: var(--neon-blue);
+                                        font-size: 0.9rem;
+                                    "
+                                >
+                                    TAP TO ENGAGE
+                                </p>
+                            </div>
+
+                            <iframe
+                                src="./playable/playable-scifi.html"
+                                class="game-iframe"
+                                title="Star Bastion Gameplay"
+                                allow="autoplay; fullscreen"
+                            >
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-info">
+                    <div class="info-panel">
+                        <h2>Mission Briefing</h2>
+                        <p style="color: #ccc; margin-top: 10px">
+                            Commander, the orbital station is under siege. You
+                            have 30 seconds to calibrate turrets and repel the
+                            Vexor fleet. This is a live tactical simulation.
+                        </p>
+
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5-9h10v2H7z"
+                                        />
+                                    </svg>
+                                </div>
+                                <div class="feature-text">
+                                    <h3>Precision Targeting</h3>
+                                    <p>
+                                        Drag and drop plasma turrets onto the
+                                        hull hardpoints.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"
+                                        />
+                                    </svg>
+                                </div>
+                                <div class="feature-text">
+                                    <h3>Shield Integrity</h3>
+                                    <p>
+                                        Manage energy distribution. Don't let
+                                        the core reach 0%.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M7 2v11h3v9l7-12h-4l4-8z" />
+                                    </svg>
+                                </div>
+                                <div class="feature-text">
+                                    <h3>Instant Deployment</h3>
+                                    <p>
+                                        No loading times. Immediate tactical
+                                        insertion.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 40px">
+                            <a href="./scifi-game.html" class="cyber-btn">
+                                Access Full Database
+                            </a>
+                            <p
+                                style="
+                                    font-size: 0.7rem;
+                                    color: #555;
+                                    margin-top: 10px;
+                                "
+                            >
+                                // SYSTEM VERSION 2.4.1 // SECURE CONNECTION
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <footer class="footer">
+                <p>
+                    &copy; 2077 Neon Forge Systems. Unauthorized access is a
+                    felony.
+                </p>
+            </footer>
+        </div>
+
+        <script src="js/scifi-script.js"></script>
+    </body>
+</html>

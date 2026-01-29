@@ -1,3 +1,4 @@
+/* style.css */
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +6,7 @@
 }
 
 body {
-    font-family: 'Cinzel', serif;
+    font-family: "Cinzel", serif;
     background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
@@ -14,9 +15,15 @@ body {
 }
 
 @keyframes gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .container {
@@ -37,7 +44,7 @@ body {
 }
 
 .title {
-    font-family: 'MedievalSharp', cursive;
+    font-family: "MedievalSharp", cursive;
     font-size: 3em;
     color: #d4af37;
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
@@ -48,6 +55,129 @@ body {
     font-size: 1.3em;
     color: #f8f8f8;
     font-style: italic;
+}
+
+/* Hub (index) page */
+.hub-main {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.6fr);
+    gap: 32px;
+    align-items: flex-start;
+}
+
+.hub-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hub-item {
+    display: block;
+    padding: 20px 22px;
+    background: rgba(0, 0, 0, 0.65);
+    border-radius: 16px;
+    border: 2px solid rgba(212, 175, 55, 0.3);
+    color: inherit;
+    text-decoration: none;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.hub-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at top left,
+        rgba(212, 175, 55, 0.25),
+        transparent 55%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.hub-item-header h2 {
+    font-size: 1.4em;
+    margin-top: 6px;
+}
+
+.hub-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.hub-item-body {
+    max-height: 68px;
+    margin-top: 10px;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+    font-size: 0.95rem;
+}
+
+.hub-item-body p {
+    margin-bottom: 8px;
+}
+
+.hub-item-body ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.hub-item-body li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 4px;
+    font-size: 0.9rem;
+}
+
+.hub-item-body li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #d4af37;
+}
+
+.hub-item:hover {
+    border-color: #d4af37;
+    transform: translateX(6px);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.6);
+}
+
+.hub-item:hover::before {
+    opacity: 1;
+}
+
+.hub-item:hover .hub-item-body {
+    max-height: 300px;
+}
+
+.hub-description {
+    padding: 24px 26px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 16px;
+    border: 2px solid rgba(212, 175, 55, 0.4);
+}
+
+.hub-description p {
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+.hub-description ul {
+    margin-top: 12px;
+    margin-left: 18px;
+}
+
+.hub-description li {
+    margin-bottom: 6px;
 }
 
 /* Ad Page Specific Styles */
@@ -74,7 +204,7 @@ body {
     padding: 15px;
     position: relative;
     border: 3px solid #d4af37;
-    box-shadow: 
+    box-shadow:
         0 20px 40px rgba(0, 0, 0, 0.6),
         inset 0 0 20px rgba(212, 175, 55, 0.3);
     transform: rotateY(-5deg);
@@ -114,20 +244,14 @@ body {
     background: #1a1a2e;
 }
 
-/* Ensure the parent is relative so absolute positioning works */
-.phone-screen {
-    position: relative; 
-    /* maintain your existing styles for phone-screen here */
-}
-
 .game-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
-    z-index: 10; /* Sits on top of iframe */
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 10;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -135,15 +259,14 @@ body {
     transition: opacity 0.3s ease;
 }
 
-/* Style the button/text inside */
 .overlay-content {
     text-align: center;
     color: white;
-    font-family: 'MedievalSharp', cursive;
+    font-family: "MedievalSharp", cursive;
     background: rgba(0, 0, 0, 0.8);
     padding: 15px 25px;
     border-radius: 8px;
-    border: 2px solid #d4af37; /* Gold border */
+    border: 2px solid #d4af37;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -154,45 +277,9 @@ body {
     font-size: 2rem;
 }
 
-/* STATE: When the game is active */
 .game-overlay.is-playing {
-    opacity: 0; /* Make it invisible */
+    opacity: 0;
     pointer-events: none;
-}
-
-.demo-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, rgba(26, 42, 108, 0.8), rgba(178, 31, 31, 0.8));
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-
-.demo-text {
-    font-size: 1.5em;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #d4af37;
-}
-
-.phone-home-button {
-    width: 60px;
-    height: 60px;
-    background: #333;
-    border-radius: 50%;
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    border: 2px solid #444;
 }
 
 /* Game Info */
@@ -262,7 +349,11 @@ body {
 }
 
 .breadcrumb {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
 }
 
 .breadcrumb a {
@@ -275,6 +366,56 @@ body {
     text-decoration: underline;
 }
 
+.breadcrumb-separator {
+    opacity: 0.6;
+}
+
+/* === FULLSCREEN UI UPDATES (BUTTON & BREADCRUMBS) === */
+
+/* Left Button: Compact & Fixed Top-Left */
+.leave-game-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1100;
+
+    background: rgba(0, 0, 0, 0.85);
+    color: #d4af37;
+    border: 2px solid #d4af37;
+    border-radius: 8px;
+    padding: 8px 16px;
+
+    font-family: "MedievalSharp", cursive;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.leave-game-btn:hover {
+    background: rgba(212, 175, 55, 0.2);
+    box-shadow: 0 0 10px #d4af37;
+}
+
+/* Breadcrumbs: Fixed Top-Right */
+.fullscreen-breadcrumb {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    left: auto;
+    bottom: auto;
+    z-index: 1100;
+
+    background: rgba(0, 0, 0, 0.85);
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+/* Story/Art Sections */
 .story-section {
     background: rgba(0, 0, 0, 0.7);
     padding: 40px;
@@ -312,11 +453,52 @@ body {
     justify-content: center;
 }
 
+.scifi-page .title {
+    font-family: "Cinzel", serif;
+}
+
+.scifi-frame {
+    border-color: #5ddcff;
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.6),
+        inset 0 0 20px rgba(93, 220, 255, 0.4);
+}
+
+.scifi-art .art-frame {
+    background: linear-gradient(45deg, #0b1020, #223);
+    border-color: #1f3b4d;
+}
+
+.scifi-scene {
+    background: radial-gradient(
+        circle at top,
+        #4b7fff 10%,
+        #020711 55%,
+        #000 100%
+    );
+}
+
+.scifi-scene .station {
+    background: linear-gradient(180deg, #7f8c8d, #2c3e50);
+    border-radius: 50%;
+    width: 70px;
+}
+
+.scifi-scene .fighter {
+    background: #e74c3c;
+    border-radius: 4px;
+    width: 28px;
+}
+
+.scifi-scene .core {
+    background: #f1c40f;
+}
+
 .art-frame {
     width: 200px;
     height: 250px;
-    background: linear-gradient(45deg, #8B4513, #A0522D);
-    border: 15px solid #5D4037;
+    background: linear-gradient(45deg, #8b4513, #a0522d);
+    border: 15px solid #5d4037;
     border-radius: 10px;
     position: relative;
     overflow: hidden;
@@ -326,7 +508,7 @@ body {
 .knight-baby-scene {
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, #87CEEB 40%, #228B22 40%);
+    background: linear-gradient(180deg, #87ceeb 40%, #228b22 40%);
     position: relative;
 }
 
@@ -347,7 +529,7 @@ body {
     left: 60%;
     width: 15px;
     height: 20px;
-    background: #FFB6C1;
+    background: #ffb6c1;
     border-radius: 50%;
 }
 
@@ -478,48 +660,50 @@ body {
     border: block;
 }
 
-.leave-game-btn {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    z-index: 1001;
-    background: rgba(0, 0, 0, 0.7);
-    color: #d4af37;
-    border: 2px solid #d4af37;
-    border-radius: 8px;
-    padding: 8px 15px;
-    font-family: 'MedievalSharp', cursive;
-    font-size: 14px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.leave-game-btn:hover {
-    background: rgba(212, 175, 55, 0.2);
-}
-
 /* Responsive Design */
+@media (max-width: 900px) {
+    .hub-main {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 768px) {
     .ad-page .main-content {
         grid-template-columns: 1fr;
     }
-    
+
     .story-content {
         grid-template-columns: 1fr;
     }
-    
+
     .download-buttons {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .title {
         font-size: 2em;
     }
-    
+
     .phone-frame {
         transform: none;
         width: 280px;
         height: 560px;
+    }
+
+    .hub-item-body {
+        max-height: 300px;
+    }
+
+    /* On small screens, hide the middle breadcrumb part to prevent overlap */
+    .fullscreen-breadcrumb span:nth-child(2),
+    .fullscreen-breadcrumb a:nth-child(3) {
+        display: none;
+    }
+
+    /* Also hide separators if we hide elements */
+    .fullscreen-breadcrumb .breadcrumb-separator:nth-of-type(1),
+    .fullscreen-breadcrumb .breadcrumb-separator:nth-of-type(2) {
+        display: none;
     }
 }
