@@ -44,35 +44,58 @@ body {
     position: relative; /* For absolute positioning of back button */
 }
 
-/* --- New Medieval Back Button --- */
+/* --- Medieval Back Button (Desktop) --- */
 .medieval-back-btn {
     position: absolute;
     left: 30px;
     top: 50%;
-    transform: translateY(-50%);
+    /* Combine centering with scale for animation */
+    transform: translateY(-50%) scale(1);
     
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     
     background: rgba(0, 0, 0, 0.6);
     color: #d4af37;
     text-decoration: none;
-    padding: 10px 18px;
+    /* Увеличенный размер для десктопа */
+    padding: 12px 24px;
     border: 2px solid #d4af37;
     border-radius: 8px;
     
     font-family: "MedievalSharp", cursive;
-    font-size: 1rem;
+    font-size: 1.2rem; /* Увеличенный шрифт */
+    font-weight: bold;
     text-transform: uppercase;
-    transition: all 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease;
     z-index: 100;
+    
+    /* Pulsing Animation */
+    animation: medieval-pulse 2s infinite ease-in-out;
+}
+
+@keyframes medieval-pulse {
+    0% {
+        transform: translateY(-50%) scale(1);
+        box-shadow: 0 0 0 rgba(212, 175, 55, 0);
+    }
+    50% {
+        transform: translateY(-50%) scale(1.05);
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+    }
+    100% {
+        transform: translateY(-50%) scale(1);
+        box-shadow: 0 0 0 rgba(212, 175, 55, 0);
+    }
 }
 
 .medieval-back-btn:hover {
     background: #d4af37;
     color: #1a1a2e;
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+    animation: none; /* Stop pulsing on hover */
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.8);
 }
 
 .title {
@@ -87,6 +110,36 @@ body {
     font-size: 1.3em;
     color: #f8f8f8;
     font-style: italic;
+}
+
+/* --- Mobile Specific Back Button (Hidden on Desktop) --- */
+.medieval-mobile-wrapper {
+    display: none; /* Hidden by default */
+    width: 100%;
+    margin-top: 25px;
+    perspective: 1000px; /* To match phone 3d feel if needed */
+}
+
+.medieval-mobile-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    background: linear-gradient(45deg, #1a1a2e, #000);
+    border: 2px solid #d4af37;
+    border-radius: 12px;
+    color: #d4af37;
+    text-decoration: none;
+    font-family: "MedievalSharp", cursive;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.medieval-mobile-btn::after {
+    content: "↩ Return to Hub";
 }
 
 /* Hub (index) page */
@@ -223,6 +276,7 @@ body {
 /* Phone Simulator */
 .phone-simulator {
     display: flex;
+    flex-direction: column; /* Changed to column to allow button below */
     justify-content: center;
     align-items: center;
     perspective: 1000px;
@@ -605,10 +659,16 @@ body {
         transform: none;
         display: inline-flex;
         margin-bottom: 15px;
+        animation: none; /* No pulse on mobile header btn */
     }
 
     .ad-page .main-content {
         grid-template-columns: 1fr;
+    }
+    
+    /* SHOW Mobile Back Button under phone */
+    .medieval-mobile-wrapper {
+        display: block;
     }
 
     .story-content {
