@@ -3,6 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const overlay = document.getElementById("gameOverlay");
   const phoneFrame = document.querySelector(".device-frame");
 
+  // Переменная для отслеживания нахождения мыши над телефоном
+  let isPhoneHover = false;
+
   if (overlay) {
     overlay.addEventListener("click", function (e) {
       // Check if mobile (screen width < 768px)
@@ -63,9 +66,27 @@ document.addEventListener("DOMContentLoaded", () => {
   // 5. Desktop 3D Tilt Effect
   // Only applied if we are on desktop
   if (window.innerWidth > 900 && phoneFrame) {
+    
+    // --- НОВОЕ: Слушатели для остановки вращения ---
+    phoneFrame.addEventListener("mouseenter", () => {
+      isPhoneHover = true;
+      // Сбрасываем в базовое положение, чтобы удобно было играть
+      // rotateY(-5deg) - это базовый угол из вашей формулы ниже
+      phoneFrame.style.transform = "rotateY(-5deg) rotateX(0deg)";
+      // Плавный переход добавлен в CSS (transition), поэтому рывка не будет
+    });
+
+    phoneFrame.addEventListener("mouseleave", () => {
+      isPhoneHover = false;
+    });
+    // -----------------------------------------------
+
     document.addEventListener("mousemove", (e) => {
-      const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-      const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+      // Если мышь на телефоне, прерываем функцию и не вращаем
+      if (isPhoneHover) return;
+
+      const xAxis = (window.innerWidth / 2 - e.pageX) / 50;
+      const yAxis = (window.innerHeight / 2 - e.pageY) / 50;
 
       // Subtle rotation based on mouse position
       // We combine the base rotation (-5deg) with dynamic movement

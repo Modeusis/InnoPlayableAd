@@ -41,6 +41,38 @@ body {
     border-radius: 15px;
     border: 2px solid #d4af37;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    position: relative; /* For absolute positioning of back button */
+}
+
+/* --- New Medieval Back Button --- */
+.medieval-back-btn {
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    
+    background: rgba(0, 0, 0, 0.6);
+    color: #d4af37;
+    text-decoration: none;
+    padding: 10px 18px;
+    border: 2px solid #d4af37;
+    border-radius: 8px;
+    
+    font-family: "MedievalSharp", cursive;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.medieval-back-btn:hover {
+    background: #d4af37;
+    color: #1a1a2e;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
 }
 
 .title {
@@ -370,51 +402,6 @@ body {
     opacity: 0.6;
 }
 
-/* === FULLSCREEN UI UPDATES (BUTTON & BREADCRUMBS) === */
-
-/* Left Button: Compact & Fixed Top-Left */
-.leave-game-btn {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 1100;
-
-    background: rgba(0, 0, 0, 0.85);
-    color: #d4af37;
-    border: 2px solid #d4af37;
-    border-radius: 8px;
-    padding: 8px 16px;
-
-    font-family: "MedievalSharp", cursive;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-}
-
-.leave-game-btn:hover {
-    background: rgba(212, 175, 55, 0.2);
-    box-shadow: 0 0 10px #d4af37;
-}
-
-/* Breadcrumbs: Fixed Top-Right */
-.fullscreen-breadcrumb {
-    position: fixed;
-    right: 20px;
-    top: 20px;
-    left: auto;
-    bottom: auto;
-    z-index: 1100;
-
-    background: rgba(0, 0, 0, 0.85);
-    padding: 8px 16px;
-    border-radius: 999px;
-    border: 1px solid rgba(212, 175, 55, 0.4);
-
-    font-size: 0.8rem;
-    white-space: nowrap;
-}
-
 /* Story/Art Sections */
 .story-section {
     background: rgba(0, 0, 0, 0.7);
@@ -451,47 +438,6 @@ body {
 .medieval-art {
     display: flex;
     justify-content: center;
-}
-
-.scifi-page .title {
-    font-family: "Cinzel", serif;
-}
-
-.scifi-frame {
-    border-color: #5ddcff;
-    box-shadow:
-        0 20px 40px rgba(0, 0, 0, 0.6),
-        inset 0 0 20px rgba(93, 220, 255, 0.4);
-}
-
-.scifi-art .art-frame {
-    background: linear-gradient(45deg, #0b1020, #223);
-    border-color: #1f3b4d;
-}
-
-.scifi-scene {
-    background: radial-gradient(
-        circle at top,
-        #4b7fff 10%,
-        #020711 55%,
-        #000 100%
-    );
-}
-
-.scifi-scene .station {
-    background: linear-gradient(180deg, #7f8c8d, #2c3e50);
-    border-radius: 50%;
-    width: 70px;
-}
-
-.scifi-scene .fighter {
-    background: #e74c3c;
-    border-radius: 4px;
-    width: 28px;
-}
-
-.scifi-scene .core {
-    background: #f1c40f;
 }
 
 .art-frame {
@@ -643,23 +589,6 @@ body {
     color: #ccc;
 }
 
-.mobile-fullscreen-game {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #000;
-    z-index: 1000;
-    display: block;
-}
-
-.mobile-game-frame {
-    width: 100%;
-    height: 100%;
-    border: block;
-}
-
 /* Responsive Design */
 @media (max-width: 900px) {
     .hub-main {
@@ -668,6 +597,16 @@ body {
 }
 
 @media (max-width: 768px) {
+    /* Responsive tweaks for Back Button */
+    .medieval-back-btn {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+        display: inline-flex;
+        margin-bottom: 15px;
+    }
+
     .ad-page .main-content {
         grid-template-columns: 1fr;
     }
@@ -693,17 +632,5 @@ body {
 
     .hub-item-body {
         max-height: 300px;
-    }
-
-    /* On small screens, hide the middle breadcrumb part to prevent overlap */
-    .fullscreen-breadcrumb span:nth-child(2),
-    .fullscreen-breadcrumb a:nth-child(3) {
-        display: none;
-    }
-
-    /* Also hide separators if we hide elements */
-    .fullscreen-breadcrumb .breadcrumb-separator:nth-of-type(1),
-    .fullscreen-breadcrumb .breadcrumb-separator:nth-of-type(2) {
-        display: none;
     }
 }
